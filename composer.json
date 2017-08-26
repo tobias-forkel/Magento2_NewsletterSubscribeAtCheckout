@@ -1,0 +1,29 @@
+{
+    "name": "tobias-forkel/magento2-newsletter-subscribe-at-checkout",
+    "description": "This Magento 2 module allows you to enable a newsletter subscription checkbox on the checkout page. Customers can subscribe to your newsletter list in Marketing > Communications > Newsletter Subscribers during checkout.",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Tobias Forkel",
+            "email": "tobias.forkel@gmx.com",
+            "homepage": "http://www.tobiasforkel.de/"
+        }
+    ],
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/framework": "^100",
+        "magento/module-newsletter": "^100"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Forkel\\NewsletterSubscribeAtCheckout\\": ""
+        }
+    }
+}

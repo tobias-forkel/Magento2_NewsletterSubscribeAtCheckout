@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Forkel NewsletterSubscriptionAtCheckout
+ *
+ * @category    Forkel
+ * @package     Forkel_NewsletterSubscriptionAtCheckout
+ * @copyright   Copyright (c) 2017 Tobias Forkel (http://www.tobiasforkel.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="forkel_newslettersubscriptionatcheckout_shippinginformationmanagement" type="Forkel\NewsletterSubscribeAtCheckout\Model\Plugin\Checkout\ShippingInformationManagement" sortOrder="10"/>
+    </type>
+</config>

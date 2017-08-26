@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Forkel NewsletterSubscriptionAtCheckout
+ *
+ * @category    Forkel
+ * @package     Forkel_NewsletterSubscriptionAtCheckout
+ * @copyright   Copyright (c) 2017 Tobias Forkel (http://www.tobiasforkel.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root" ifconfig="checkout/forkel_newslettersubscribeatcheckout/enabled">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-email" xsi:type="array">
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Forkel_NewsletterSubscribeAtCheckout/form/element/email</item>
+                                                            </item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="newsletter_subscribe" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/form</item>
+                                                                    <item name="displayArea" xsi:type="string">newsletter_subscribe</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">Forkel_NewsletterSubscribeAtCheckout/form/element/newsletter_subscribe</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-email" xsi:type="array">
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">Forkel_NewsletterSubscribeAtCheckout/form/element/email</item>
+                                                            </item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="newsletter_subscribe" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Ui/js/form/form</item>
+                                                                    <item name="displayArea" xsi:type="string">newsletter_subscribe</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="template" xsi:type="string">Forkel_NewsletterSubscribeAtCheckout/form/element/newsletter_subscribe</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

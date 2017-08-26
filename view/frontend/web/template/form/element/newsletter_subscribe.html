@@ -1,0 +1,31 @@
+<!--
+/**
+ * Forkel NewsletterSubscriptionAtCheckout
+ *
+ * @category    Forkel
+ * @package     Forkel_NewsletterSubscriptionAtCheckout
+ * @copyright   Copyright (c) 2017 Tobias Forkel (http://www.tobiasforkel.de)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+
+<!-- ko if: enabled -->
+    <div class="field">
+        <div class="control">
+            <input class="input-text"
+                   type="checkbox"
+                   data-bind="textInput: 1, checked: checked"
+                   name="newsletter_subscribe"
+                   id="newsletter_subscribe"
+                   checked="checked" />
+            <label class="label" for="newsletter_subscribe">
+                <span data-bind="i18n: label"></span>
+            </label>
+        </div>
+
+        <!-- ko if: note_enabled -->
+            <span class="note" data-bind="i18n: note"></span>
+        <!-- /ko -->
+
+    </div>
+<!-- /ko -->
