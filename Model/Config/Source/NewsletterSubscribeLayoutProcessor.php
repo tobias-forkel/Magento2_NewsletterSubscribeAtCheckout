@@ -38,10 +38,8 @@ class NewsletterSubscribeLayoutProcessor
         $enabled = ($this->_helper->getConfig('enabled')) ? 1 : 0;
         $checked = ($this->_helper->getConfig('checked')) ? 1 : 0;
         $label = $this->_helper->getConfig('label');
-
-        if ($note_enabled = $this->_helper->getConfig('note_enabled') && strlen($this->_helper->getConfig('note')) > 0) {
-            $note = $this->_helper->getConfig('note');
-        }
+        $note_enabled = $this->_helper->getConfig('note_enabled');
+        $note = $this->_helper->getConfig('note');
 
         $config = [
             'customer-email' => [
