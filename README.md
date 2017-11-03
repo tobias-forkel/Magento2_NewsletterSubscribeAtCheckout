@@ -12,14 +12,14 @@ This Magento 2 module allows you to enable a newsletter subscription checkbox on
 ## Installation (Composer)
 
 1. Add this extension to your repository `composer config repositories.tobias-forkel/magento2-newsletter-subscribe-at-checkout vcs https://github.com/tobias-forkel/Magento2_NewsletterSubscribeAtCheckout.git`
-2. Update your composer.json `composer require "tobias-forkel/magento2-newsletter-subscribe-at-checkout":"1.0.1"`
+2. Update your composer.json `composer require "tobias-forkel/magento2-newsletter-subscribe-at-checkout":"1.0.2"`
 
 ```
 ./composer.json has been updated
 Loading composer repositories with package information
 Updating dependencies (including require-dev)              
 Package operations: 1 install, 0 updates, 0 removals
-  - Installing tobias-forkel/magento2-newsletter-subscribe-at-checkout (1.0.1): Downloading (100%)         
+  - Installing tobias-forkel/magento2-newsletter-subscribe-at-checkout (1.0.2): Downloading (100%)         
 Writing lock file
 Generating autoload files
 ```
@@ -62,6 +62,10 @@ If you have any issues with this extension, open an issue on [Github](https://gi
 Follow me on [GitHub](https://github.com/tobias-forkel) and [Twitter](https://twitter.com/tobiasforkel).
 
 ## History
+===== 1.0.2 =====
+* Updated composer require. [[#1](https://github.com/tobias-forkel/Magento2_NewsletterSubscribeAtCheckout/pull/1)] [[Rakhal](https://github.com/rakibabu)]
+* Removed ifconfig from referenceBlock for 2.2.x compatibility [[#1](https://github.com/tobias-forkel/Magento2_NewsletterSubscribeAtCheckout/pull/1)] [[Rakhal](https://github.com/rakibabu)]
+
 ===== 1.0.1 =====
 * Variable note didn't exist when note was disabled.
 
