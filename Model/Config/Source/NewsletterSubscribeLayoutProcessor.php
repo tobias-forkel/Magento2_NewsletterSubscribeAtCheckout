@@ -10,24 +10,27 @@
 
 namespace Forkel\NewsletterSubscribeAtCheckout\Model\Config\Source;
 
-use Forkel\NewsletterSubscribeAtCheckout\Helper\Config as Helper;
+use Forkel\NewsletterSubscribeAtCheckout\Helper\Data as Helper;
 
 /**
  * Class NewsletterSubscribeLayoutProcessor
+ * @package Forkel\NewsletterSubscribeAtCheckout\Model\Config\Source
  */
 class NewsletterSubscribeLayoutProcessor
 {
     /**
-     * @var \Forkel\NewsletterSubscribeAtCheckout\Helper\Config
+     * @var Helper
      */
-    protected $_helper;
+    private $helper;
 
     /**
-     * @param \Forkel\NewsletterSubscribeAtCheckout\Helper\Config $helper
+     * NewsletterSubscribeLayoutProcessor constructor.
+     * @param Helper $helper
      */
-    public function __construct(Helper $helper)
-    {
-        $this->_helper = $helper;
+    public function __construct(
+        Helper $helper
+    ) {
+        $this->helper = $helper;
     }
 
     /**
@@ -35,11 +38,11 @@ class NewsletterSubscribeLayoutProcessor
      */
     public function process($jsLayout)
     {
-        $enabled = ($this->_helper->getConfig('enabled')) ? 1 : 0;
-        $checked = ($this->_helper->getConfig('checked')) ? 1 : 0;
-        $label = $this->_helper->getConfig('label');
-        $note_enabled = ($this->_helper->getConfig('note_enabled')) ? 1 : 0;
-        $note = $this->_helper->getConfig('note');
+        $enabled = ($this->helper->getConfig('enabled')) ? 1 : 0;
+        $checked = ($this->helper->getConfig('checked')) ? 1 : 0;
+        $label = $this->helper->getConfig('label');
+        $note_enabled = ($this->helper->getConfig('note_enabled')) ? 1 : 0;
+        $note = $this->helper->getConfig('note');
 
         $config = [
             'customer-email' => [

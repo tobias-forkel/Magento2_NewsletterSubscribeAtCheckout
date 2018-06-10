@@ -14,8 +14,15 @@ use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 
+/**
+ * Class InstallSchema
+ * @package Forkel\NewsletterSubscribeAtCheckout\Setup
+ */
 class InstallSchema implements InstallSchemaInterface
 {
+    /**
+     * @param SchemaSetupInterface $setup
+     */
     public function install(
         SchemaSetupInterface $setup,
         ModuleContextInterface $context

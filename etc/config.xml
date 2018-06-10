@@ -14,7 +14,7 @@
     <default>
         <checkout>
             <forkel_newslettersubscribeatcheckout>
-                <enabled>1</enabled>
+                <enabled>0</enabled>
                 <checked>0</checked>
                 <label>Subscribe for Newsletter</label>
                 <note_enabled>0</note_enabled>

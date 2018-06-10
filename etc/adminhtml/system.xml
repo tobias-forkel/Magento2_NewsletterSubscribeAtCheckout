@@ -27,19 +27,32 @@
                     <label>Checked</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>This will pre-tick the newsletter checkbox.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                 </field>
                 <field id="label" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Label</label>
                     <validate>validate-no-empty</validate>
-                    <comment>For example: Subscribe for Newsletter</comment>
+                    <comment>E.g: Subscribe for Newsletter</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                 </field>
                 <field id="note_enabled" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Note</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Enable a note right below the newsletter subscription.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                 </field>
                 <field id="note" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Text for Note</label>
+                    <comment>E.g: Subscribe now and receive discount codes monthly.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                 </field>
             </group>
         </section>

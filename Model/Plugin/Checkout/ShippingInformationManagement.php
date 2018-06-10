@@ -10,44 +10,45 @@
 
 namespace Forkel\NewsletterSubscribeAtCheckout\Model\Plugin\Checkout;
 
-use Magento\Quote\Model\QuoteRepository;
-use Magento\Checkout\Model\ShippingInformationManagement as ShippingManagement;
-use Magento\Checkout\Api\Data\ShippingInformationInterface;
-use Forkel\NewsletterSubscribeAtCheckout\Helper\Config as Helper;
+use Magento\Quote\Model\QuoteRepository as QuoteRepository;
+use Magento\Checkout\Api\Data\ShippingInformationInterface as ShippingInformationInterface;
+use Forkel\NewsletterSubscribeAtCheckout\Helper\Data as Helper;
 
+/**
+ * Class ShippingInformationManagement
+ * @package Forkel\NewsletterSubscribeAtCheckout\Model\Plugin\Checkout
+ */
 class ShippingInformationManagement
 {
     /**
-     * @var \Magento\Checkout\Api\Data\ShippingInformationExtensionFactory
+     * @var QuoteRepository
      */
-    protected $_extensionFactory;
-
-    protected $_logger;
+    private $quoteRepository;
 
     /**
-     * @var \Forkel\NewsletterSubscribeAtCheckout\Helper\Config
+     * @var ShippingInformationInterface
      */
-    protected $_helper;
+    private $extensionFactory;
 
     /**
-     * @var \Magento\Quote\Model\QuoteRepository
+     * @var Helper
      */
-    protected $_quoteRepository;
+    private $helper;
 
     /**
-     * @param \Magento\Quote\Model\QuoteRepository $quoteRepository
-     * @param \Forkel\NewsletterSubscribeAtCheckout\Helper\Config $helper
+     * ShippingInformationManagement constructor.
+     * @param QuoteRepository $quoteRepository
+     * @param Helper $helper
+     * @param ShippingInformationInterface $extensionFactory
      */
     public function __construct(
-        \Magento\Quote\Model\QuoteRepository $quoteRepository,
-        \Forkel\NewsletterSubscribeAtCheckout\Helper\Config $helper,
-        \Magento\Checkout\Api\Data\ShippingInformationExtensionFactory $extensionFactory,
-        \Psr\Log\LoggerInterface $logger
+        QuoteRepository $quoteRepository,
+        Helper $helper,
+        ShippingInformationInterface $extensionFactory
     ) {
-        $this->_quoteRepository = $quoteRepository;
-        $this->_helper = $helper;
-        $this->_extensionFactory = $extensionFactory;
-        $this->_logger = $logger;
+        $this->quoteRepository = $quoteRepository;
+        $this->helper = $helper;
+        $this->extensionFactory = $extensionFactory;
     }
 
     /**
@@ -62,12 +63,11 @@ class ShippingInformationManagement
     ) {
 
         // Check if feature is enabled
-        if ($this->_helper->getConfig('enabled'))
-        {
+        if ($this->helper->getConfig('enabled')) {
             $extAttributes = $addressInformation->getExtensionAttributes();
             $newsletterSubscribe = $extAttributes->getNewsletterSubscribe() ? 1 : 0;
 
-            $quote = $this->_quoteRepository->getActive($cartId);
+            $quote = $this->quoteRepository->getActive($cartId);
             $quote->setNewsletterSubscribe($newsletterSubscribe);
         }
     }
