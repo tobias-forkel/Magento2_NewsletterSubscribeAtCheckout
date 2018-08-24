@@ -1,3 +1,7 @@
+```
+NOTE: This repository has moved to https://github.com/magenizr/Magenizr_NewsletterSubscribeAtCheckout and will be continued there.
+```
+
 # Magento2 NewsletterSubscribeAtCheckout
 This Magento 2 module allows you to enable a newsletter subscription checkbox on the checkout page. Customers can subscribe to your newsletter list in `Marketing > Communications > Newsletter Subscribers` during checkout.
 
